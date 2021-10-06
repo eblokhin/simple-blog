@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Yarn ignored files (non-zero-config)
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+# !/.yarn/cache

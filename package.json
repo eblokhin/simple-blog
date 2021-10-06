@@ -1,0 +1,24 @@
+{
+  "name": "simple-blog",
+  "version": "1.0.0",
+  "description": "Simple blog built with by NextJS+Strapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eblokhin/simple-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eblokhin/simple-blog/issues"
+  },
+  "homepage": "https://github.com/eblokhin/simple-blog#readme",
+  "packageManager": "yarn@3.0.2",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
