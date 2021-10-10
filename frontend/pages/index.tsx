@@ -1,13 +1,19 @@
-import Container from '@/components/container'
-import MoreStories from '@/components/more-stories'
-import HeroPost from '@/components/hero-post'
-import Intro from '@/components/intro'
-import Layout from '@/components/layout'
-import { getAllPostsForHome } from '@/lib/api'
+import Container from 'components/container'
+import MoreStories from 'components/more-stories'
+import HeroPost from 'components/hero-post'
+import Intro from 'components/intro'
+import Layout from 'components/layout'
+import { getAllPostsForHome } from 'lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '@/lib/constants'
+import { CMS_NAME } from 'lib/constants'
+import { GetStaticProps } from 'next'
 
-export default function Index({ allPosts, preview }) {
+type TProps = {
+  allPosts?: any[]
+  preview: boolean
+}
+
+export default function Index({ allPosts, preview }: TProps) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
@@ -35,7 +41,7 @@ export default function Index({ allPosts, preview }) {
   )
 }
 
-export async function getStaticProps({ preview = null }) {
+export const getStaticProps: GetStaticProps<TProps> = async ({ preview = null }) => {
   const allPosts = (await getAllPostsForHome(preview)) || []
   return {
     props: { allPosts, preview },

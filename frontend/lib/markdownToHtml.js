@@ -1,7 +1,10 @@
-import { remark } from 'remark'
+import remark from 'remark'
 import html from 'remark-html'
 
-export default async function markdownToHtml(markdown) {
-  const result = await remark().use(html).process(markdown)
+async function markdownToHtml(markdown) {
+  const remarkParser = remark().use(html)
+  const result = await remarkParser.process(markdown)
   return result.toString()
 }
+
+export default markdownToHtml
