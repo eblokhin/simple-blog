@@ -4,8 +4,10 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
-        <body>
+        <Head>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet"></link>
+        </Head>
+        <body className="font-sans">
           <Main />
           <NextScript />
         </body>

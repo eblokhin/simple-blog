@@ -1,15 +1,15 @@
 import Alert from './alert'
 import Footer from './footer'
-import HeaderV2 from './header-v2'
+import Header from './header'
 import Meta from './meta'
 
 export default function Layout({ preview, children }) {
   return (
     <>
       <Meta />
-      <div className="min-h-screen ">
+      <div className="min-h-screen bg-background">
         <Alert preview={preview} />
-        <HeaderV2 />
+        <Header />
         <main>{children}</main>
       </div>
       <Footer />

@@ -1,0 +1,22 @@
+@tailwind utilities;
+
+.link {
+  @apply text-gray-300 transition-colors relative inline-block;
+}
+
+.link::before {
+  content: '';
+  @apply absolute inset-x-0 -bottom-0.5 h-0.5 transition-opacity opacity-0 bg-pink-600;
+}
+
+.link:hover, 
+.link:focus,
+.link.current {
+  @apply text-pink-600;
+}
+
+.link:hover::before, 
+.link:focus::before {
+  @apply opacity-100
+}
+
